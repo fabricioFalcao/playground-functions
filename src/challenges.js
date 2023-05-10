@@ -95,7 +95,7 @@ const buzzer = (numbers) => {
   return numbers;
 };
 
-function fizzBuzz (numbers) {
+function fizzBuzz(numbers) {
   for (let index = 0; index < buzzer(numbers).length; index += 1) {
     if (typeof buzzer(numbers)[index] === 'number' && buzzer(numbers)[index] % 3 !== 0 && buzzer(numbers)[index] % 5 !== 0) {
       buzzer(numbers)[index] = 'bug!';
@@ -105,6 +105,44 @@ function fizzBuzz (numbers) {
 };
 
 // Desafio 9 - Crie a função encode e a função decode
+
+function encode (frase) {
+  const splt = frase.split('');
+  for (let letras = 0; letras < splt.length; letras += 1) {
+    if (splt[letras] === 'a') {
+      splt[letras] = 1;
+    }
+    if (splt[letras] === 'e') {
+      splt[letras] = 2;
+    } if (splt[letras] === 'i') {
+      splt[letras] = 3;
+    } if (splt[letras] === 'o') {
+      splt[letras] = 4;
+    } if (splt[letras] === 'u') {
+      splt[letras] = 5;
+    }
+  }
+  return splt.join('');
+}
+
+function decode (code) {
+  const splt2 = code.split('');
+  for (let letras = 0; letras < splt2.length; letras += 1) {
+    if (splt2[letras] == 1) {
+      splt2[letras] = 'a';
+    }
+    if (splt2[letras] == 2) {
+      splt2[letras] = 'e';
+    } if (splt2[letras] == 3) {
+      splt2[letras] = 'i';
+    } if (splt2[letras] == 4) {
+      splt2[letras] = 'o';
+    } if (splt2[letras] == 5) {
+      splt2[letras] = 'u';
+    }
+  }
+  return splt2.join('');
+}
 
 // Desafio 10 - Crie a função techList
 
