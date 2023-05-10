@@ -68,6 +68,42 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8 - Crie a função fizzBuzz
 
+const fizzBuzzer = (numbers) => {
+  for (let index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] % 3 === 0 && numbers[index] % 5 === 0) {
+      numbers[index] = 'fizzBuzz';
+    }
+  }
+  return numbers;
+};
+
+const fizzer = (numbers) => {
+  for (let index = 0; index < fizzBuzzer(numbers).length; index += 1) {
+    if (typeof fizzBuzzer(numbers)[index] === 'number' && fizzBuzzer(numbers)[index] % 3 === 0 && fizzBuzzer(numbers)[index] % 5 !== 0) {
+      fizzBuzzer(numbers)[index] = 'fizz';
+    }
+  }
+  return numbers;
+};
+
+const buzzer = (numbers) => {
+  for (let index = 0; index < fizzer(numbers).length; index += 1) {
+    if (typeof fizzer(numbers)[index] === 'number' && fizzer(numbers)[index] % 3 !== 0 && fizzer(numbers)[index] % 5 === 0) {
+      fizzer(numbers)[index] = 'buzz';
+    }
+  }
+  return numbers;
+};
+
+function fizzBuzz (numbers) {
+  for (let index = 0; index < buzzer(numbers).length; index += 1) {
+    if (typeof buzzer(numbers)[index] === 'number' && buzzer(numbers)[index] % 3 !== 0 && buzzer(numbers)[index] % 5 !== 0) {
+      buzzer(numbers)[index] = 'bug!';
+    }
+  }
+  return numbers;
+};
+
 // Desafio 9 - Crie a função encode e a função decode
 
 // Desafio 10 - Crie a função techList
