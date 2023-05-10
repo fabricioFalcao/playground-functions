@@ -1,9 +1,6 @@
 // Desafio 1 - Crie a função compareTrue
 
-const compareTrue = (parametro1, parametro2) => (parametro1 === true && parametro2 === true) && true;
-const girafa = true;
-const elefante = true;
-const macaco = false;
+const compareTrue = (parametro1, parametro2) => (parametro1 === true && parametro2 === true);
 
 // Desafio 2 - Crie a função splitSentence
 
@@ -78,31 +75,34 @@ const fizzBuzzer = (numbers) => {
 };
 
 const fizzer = (numbers) => {
-  for (let index = 0; index < fizzBuzzer(numbers).length; index += 1) {
-    if (typeof fizzBuzzer(numbers)[index] === 'number' && fizzBuzzer(numbers)[index] % 3 === 0 && fizzBuzzer(numbers)[index] % 5 !== 0) {
-      fizzBuzzer(numbers)[index] = 'fizz';
+  const fB = fizzBuzzer(numbers);
+  for (let index = 0; index < fB.length; index += 1) {
+    if (typeof fB[index] === 'number' && fB[index] % 3 === 0 && fB[index] % 5 !== 0) {
+      fB[index] = 'fizz';
     }
   }
   return numbers;
 };
 
 const buzzer = (numbers) => {
-  for (let index = 0; index < fizzer(numbers).length; index += 1) {
-    if (typeof fizzer(numbers)[index] === 'number' && fizzer(numbers)[index] % 3 !== 0 && fizzer(numbers)[index] % 5 === 0) {
-      fizzer(numbers)[index] = 'buzz';
+  const f = fizzer(numbers);
+  for (let index = 0; index < f.length; index += 1) {
+    if (typeof f[index] === 'number' && f[index] % 3 !== 0 && f[index] % 5 === 0) {
+      f[index] = 'buzz';
     }
   }
   return numbers;
 };
 
 function fizzBuzz(numbers) {
-  for (let index = 0; index < buzzer(numbers).length; index += 1) {
-    if (typeof buzzer(numbers)[index] === 'number' && buzzer(numbers)[index] % 3 !== 0 && buzzer(numbers)[index] % 5 !== 0) {
-      buzzer(numbers)[index] = 'bug!';
+  const b = buzzer(numbers);
+  for (let index = 0; index < b.length; index += 1) {
+    if (typeof b[index] === 'number' && b[index] % 3 !== 0 && b[index] % 5 !== 0) {
+      b[index] = 'bug!';
     }
   }
   return numbers;
-};
+}
 
 // Desafio 9 - Crie a função encode e a função decode
 
@@ -128,16 +128,16 @@ function encode(frase) {
 function decode(code) {
   const splt2 = code.split('');
   for (let letras = 0; letras < splt2.length; letras += 1) {
-    if (splt2[letras] == 1) {
+    if (splt2[letras] === '1') {
       splt2[letras] = 'a';
     }
-    if (splt2[letras] == 2) {
+    if (splt2[letras] === '2') {
       splt2[letras] = 'e';
-    } if (splt2[letras] == 3) {
+    } if (splt2[letras] === '3') {
       splt2[letras] = 'i';
-    } if (splt2[letras] == 4) {
+    } if (splt2[letras] === '4') {
       splt2[letras] = 'o';
-    } if (splt2[letras] == 5) {
+    } if (splt2[letras] === '5') {
       splt2[letras] = 'u';
     }
   }
@@ -150,7 +150,7 @@ const techList = (tech, name) => {
   let sorted = tech.sort();
   const lista = [];
   for (let index = 0; index < tech.length; index += 1) {
-    lista[index] = {tech: sorted[index], name: name}
+    lista[index] = { tech: sorted[index], nome: name };
   }
   return lista;
 };
