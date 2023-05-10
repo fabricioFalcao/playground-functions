@@ -7,6 +7,8 @@ const macaco = false;
 
 // Desafio 2 - Crie a função splitSentence
 
+const splitSentence = (frase) => frase.split(' ');
+
 // Desafio 3 - Crie a função concatName
 
 // Desafio 4 - Crie a função footballPoints
