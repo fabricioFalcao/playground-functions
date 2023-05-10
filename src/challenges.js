@@ -106,7 +106,7 @@ function fizzBuzz(numbers) {
 
 // Desafio 9 - Crie a função encode e a função decode
 
-function encode (frase) {
+function encode(frase) {
   const splt = frase.split('');
   for (let letras = 0; letras < splt.length; letras += 1) {
     if (splt[letras] === 'a') {
@@ -125,7 +125,7 @@ function encode (frase) {
   return splt.join('');
 }
 
-function decode (code) {
+function decode(code) {
   const splt2 = code.split('');
   for (let letras = 0; letras < splt2.length; letras += 1) {
     if (splt2[letras] == 1) {
@@ -145,6 +145,17 @@ function decode (code) {
 }
 
 // Desafio 10 - Crie a função techList
+
+const techList = (tech, name) => {
+  let sorted = tech.sort();
+  const lista = [];
+  for (let index = 0; index < tech.length; index += 1) {
+    lista[index] = {tech: sorted[index], name: name}
+  }
+  return lista;
+};
+
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 // Não modifique essas linhas
 module.exports = {
