@@ -20,8 +20,7 @@ const arrange = (arrayNumbers) => arrayNumbers.sort((a, b) => a - b).reverse();
 
 const highestCount = (arrayNumbers) => {
   let frequenciaMaior = 1;
-  // for (let index of arrange(arrayNumbers)) {
-  for (let index = 1; index < arrange(arrayNumbers).length; index += 1) {
+   for (let index = 1; index < arrange(arrayNumbers).length; index += 1) {
     if (arrange(arrayNumbers)[index] === arrange(arrayNumbers)[index - 1]) {
       frequenciaMaior += 1;
     } else {
@@ -30,6 +29,8 @@ const highestCount = (arrayNumbers) => {
   }
   return frequenciaMaior;
 };
+
+console.log(highestCount([2, 4, 3, 3, 6, 3, 2]));
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
@@ -104,6 +105,8 @@ function fizzBuzz(numbers) {
   return numbers;
 }
 
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
+
 // Desafio 9 - Crie a função encode e a função decode
 
 function encode(frase) {
@@ -111,8 +114,7 @@ function encode(frase) {
   for (let letras = 0; letras < splt.length; letras += 1) {
     if (splt[letras] === 'a') {
       splt[letras] = 1;
-    }
-    if (splt[letras] === 'e') {
+    } if (splt[letras] === 'e') {
       splt[letras] = 2;
     } if (splt[letras] === 'i') {
       splt[letras] = 3;
@@ -130,8 +132,7 @@ function decode(code) {
   for (let letras = 0; letras < splt2.length; letras += 1) {
     if (splt2[letras] === '1') {
       splt2[letras] = 'a';
-    }
-    if (splt2[letras] === '2') {
+    } if (splt2[letras] === '2') {
       splt2[letras] = 'e';
     } if (splt2[letras] === '3') {
       splt2[letras] = 'i';
@@ -150,12 +151,10 @@ const techList = (tech, name) => {
   let sorted = tech.sort();
   const lista = [];
   for (let index = 0; index < tech.length; index += 1) {
-    lista[index] = { tech: sorted[index], nome: name };
+    lista[index] = { tech: sorted[index], name: name };
   }
   return lista;
 };
-
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 // Não modifique essas linhas
 module.exports = {
