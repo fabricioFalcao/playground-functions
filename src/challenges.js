@@ -20,7 +20,7 @@ const arrange = (arrayNumbers) => arrayNumbers.sort((a, b) => a - b).reverse();
 
 const highestCount = (arrayNumbers) => {
   let frequenciaMaior = 1;
-   for (let index = 1; index < arrange(arrayNumbers).length; index += 1) {
+  for (let index = 1; index < arrange(arrayNumbers).length; index += 1) {
     if (arrange(arrayNumbers)[index] === arrange(arrayNumbers)[index - 1]) {
       frequenciaMaior += 1;
     } else {
@@ -147,11 +147,11 @@ function decode(code) {
 
 // Desafio 10 - Crie a função techList
 
-const techList = (tech, name) => {
-  let sorted = tech.sort();
+const techList = (techs, names) => {
+  let sorted = techs.sort();
   const lista = [];
-  for (let index = 0; index < tech.length; index += 1) {
-    lista[index] = { tech: sorted[index], name: name };
+  for (let index = 0; index < techs.length; index += 1) {
+    lista[index] = { tech: sorted[index], name: names };
   }
   return lista;
 };
