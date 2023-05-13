@@ -36,21 +36,25 @@ const verifyRepetition = (numbersArray) => {
 };
 
 const generatePhoneNumber = (numbersArray) => {
-  if (!verifyLength(numbersArray)) {
+  if (verifyLength(numbersArray) === false) {
     return 'Array com tamanho incorreto.';
   }
   if (!verifyDigits(numbersArray) || !verifyRepetition(numbersArray)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  else {
-    numbersArray.splice(0, 0, '(');
-    numbersArray.splice(3, 0, ') ');
-    numbersArray.splice(9, 0, '-');
-    return numbersArray.join('');
-  }
+  numbersArray.splice(0, 0, '(');
+  numbersArray.splice(3, 0, ') ');
+  numbersArray.splice(9, 0, '-');
+  return numbersArray.join('');
 };
 
 // Desafio 12 -  Crie a função triangleCheck
+
+const sumCheck = (lineA, lineB, lineC) => lineA < (lineB + lineC) && lineB < (lineA + lineC) && lineC < (lineA + lineB);
+
+const differenceCheck = (lineA, lineB, lineC) => lineA > Math.abs(lineB - lineC) && lineB > Math.abs(lineA - lineC) && lineC > Math.abs(lineA - lineB);
+
+const triangleCheck = (lineA, lineB, lineC) => sumCheck(lineA, lineB, lineC) && differenceCheck(lineA, lineB, lineC);
 
 // Desafio 13 - Crie a função hydrate
 
