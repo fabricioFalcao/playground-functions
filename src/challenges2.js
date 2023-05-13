@@ -50,13 +50,22 @@ const generatePhoneNumber = (numbersArray) => {
 
 // Desafio 12 -  Crie a função triangleCheck
 
-const sumCheck = (lineA, lineB, lineC) => lineA < (lineB + lineC) && lineB < (lineA + lineC) && lineC < (lineA + lineB);
+const sumCheck = (lineA, lineB, lineC) => lineA < (lineB + lineC)
+  && lineB < (lineA + lineC) && lineC < (lineA + lineB);
 
-const differenceCheck = (lineA, lineB, lineC) => lineA > Math.abs(lineB - lineC) && lineB > Math.abs(lineA - lineC) && lineC > Math.abs(lineA - lineB);
+const differenceCheck = (lineA, lineB, lineC) => lineA > Math.abs(lineB - lineC)
+  && lineB > Math.abs(lineA - lineC) && lineC > Math.abs(lineA - lineB);
 
-const triangleCheck = (lineA, lineB, lineC) => sumCheck(lineA, lineB, lineC) && differenceCheck(lineA, lineB, lineC);
+const triangleCheck = (lineA, lineB, lineC) =>
+  sumCheck(lineA, lineB, lineC) && differenceCheck(lineA, lineB, lineC);
 
 // Desafio 13 - Crie a função hydrate
+
+const hydrate = (alcohool) => {
+  let doses = alcohool.match(/\d/g);
+  let soma = doses.reduce((total, parcial) => Number(total) + Number(parcial), 0);
+  return soma !== 1 ? `${soma} copos de água` : `${soma} copo de água`;
+};
 
 /* eslint no-undef: 0 */
 
